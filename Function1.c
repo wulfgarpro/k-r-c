@@ -3,6 +3,9 @@
 int power(int m, int n); // function prototype - parameter names are optional
 // int power(int, int);
 
+/*
+ * 1.7 Functions
+ */
 int main() {
     int i;
 

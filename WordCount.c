@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+/*
+ * 1.5.4 Word Counting
+ */
 int main() {
     int c;
 

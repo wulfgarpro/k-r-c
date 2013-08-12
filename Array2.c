@@ -3,6 +3,8 @@
 #define SIZE 26
 
 /*
+ * Exercise 1-14
+ *
  * This program prints a character frequency histogram horizontally.
  */
 int main() {

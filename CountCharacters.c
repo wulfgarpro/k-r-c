@@ -1,5 +1,8 @@
 #include <stdio.h>
 
+/*
+ * 1.5.2 Character Counting
+ */
 int main() {
     double nc;
     char c;

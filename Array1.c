@@ -3,6 +3,8 @@
 #define SIZE 100
 
 /*
+ * Exercise 1-13
+ *
  * This program prints a word size histogram horizontally.
  */
 int main() {
