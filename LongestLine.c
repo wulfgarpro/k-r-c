@@ -2,7 +2,7 @@
 
 #define MAXLINE 1000 // impose limit on characters
 
-int getLineLength(char line[], int lim);
+int getLine(char line[], int lim);
 void copy(char to[], char from[]);
 
 /*
@@ -15,8 +15,10 @@ int main()
     int len, max;
     char line[MAXLINE], longest[MAXLINE];
 
+    printf("This program only supports MAXLINE input characters.\n");
+
     max = 0;
-    while((len = getLineLength(line, MAXLINE)) > 0){
+    while((len = getLine(line, MAXLINE)) > 0){
         if(len > max) {
             max = len;
             copy(longest, line);
@@ -24,18 +26,24 @@ int main()
     }
 
     if(max > 0){
-        printf("%s", longest); // print a character array as a string
+        //printf("%d -> ", max);
+        printf("%d -> %s", max, longest); // print a character array as a string
     }
 
     return 0;
 }
 
-int getLineLength(char line[], int lim)
+int getLine(char line[], int lim)
 {
     int i, c;
 
-    for(i = 0; i < lim-1 && (c = getchar()) != EOF && c != '\n'; ++i){
-        line[i] = c;
+    for(i = 0; (c = getchar()) != EOF && c != '\n'; ++i){
+        if(i < lim-1) {
+            line[i] = c;
+        } else {
+            ++i; // for exercise 1-16, print arbitrary size, but don't add characters over MAXLINE to array
+        }
+
     }
 
     if(c == '\n'){
