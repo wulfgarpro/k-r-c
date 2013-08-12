@@ -3,7 +3,7 @@
 #define SIZE 26
 
 /*
- * This program prints a word size histogram horizontally.
+ * This program prints a character frequency histogram horizontally.
  */
 int main() {
     int characters[25], frequencies[25];

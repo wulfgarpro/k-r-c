@@ -1,6 +1,7 @@
 #include <stdio.h>
 
-int power(int m, int n);
+int power(int m, int n); // function prototype - parameter names are optional
+// int power(int, int);
 
 int main() {
     int i;
