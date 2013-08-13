@@ -4,6 +4,9 @@ int age;
 
 void setage();
 
+/*
+ * 1.10 External Variables and Scope
+ */
 int main(void) {
     extern int age;
 
@@ -15,6 +18,6 @@ int main(void) {
 }
 
 void setage() {
-    extern int age;
+    extern int age; // this is not a local variable
     age = 26;
 }
