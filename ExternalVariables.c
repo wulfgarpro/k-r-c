@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int age;
+int age; // set it external to function (global)
 
 void setage();
 
