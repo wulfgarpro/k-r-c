@@ -14,7 +14,15 @@ int setbits(int x, int p, int n, int y) {
     printf("%d\n", mask_b);
     return mask_a | mask_b;*/
 
+    // bitmask of n 1's, right aligned
     int bitmask = ~((~0) << n);
+
+    // A: this &'s the right most n bits of y with mask
+    // and moves this to p
+    // B: shift bitmask to p and convert 1's to 0's then
+    // & with x to 0 out p->n of x
+    // then
+    // A | B to combine A and B (result)
     return ((bitmask & y) << p) | (~(bitmask << p) & x);
 }
 
