@@ -23,6 +23,7 @@ int main(int argc, char* argv[]) {
         return -1;
     }
 
+    // fgets in libc reads in buffer from file pointer into char array
     while ((fgets(line_1, BUFFER, f) != NULL) && (fgets(line_2, BUFFER, s) != NULL)) {
         if (strcmp(line_1, line_2) != 0) {
             printf("1\t%s2\t%s", line_1,line_2); 
