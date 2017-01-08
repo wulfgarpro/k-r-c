@@ -11,15 +11,31 @@
 #define FILE_MODE "r"
 #define PAGE_SIZE 1000 // 1000 chars is a page
 
-struct PAGE_FORMAT {
+typedef struct PAGE_FORMAT {
     char* title;
     int   page_count;
-} page;
+} Page;
 
+/* Get all the file pointers.
+ */
 FILE* get_file(const char* file_name) {
     FILE* f;
     f = fopen(file_name, FILE_MODE);
     return f;
+}
+
+/* Page a file to stdout and track page count.
+ */
+void page_file(char* file_name, FILE* file) {
+    Page p; 
+    p.title = file_name;
+    p.page_count = 0;
+
+    char line[PAGE_SIZE];
+    while (fgets(line, PAGE_SIZE, file) != NULL) {
+        p.page_count++;
+        printf("Title: %s\n\n%s\nPage #: %d\n", p.title, line, p.page_count);
+    }
 }
 
 int main(int argc, char* argv[]) {
@@ -35,10 +51,7 @@ int main(int argc, char* argv[]) {
 
     int i = 0;
     for (i; i < size; i++) {
-        char line[PAGE_SIZE];
-        while (fgets(line, PAGE_SIZE, files[i]) != NULL) {
-            printf("%s", line);
-        }
+        page_file(argv[i+1], files[i]); 
     }
 
     return 0;
