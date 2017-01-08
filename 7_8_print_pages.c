@@ -27,17 +27,17 @@ int main(int argc, char* argv[]) {
 
     FILE* files[size];
     if (argc > 1) {
-        int i = 1;
+        int i = 0;
         for (i; i < size; i++) {
-            files[i] = get_file(argv[i]);
+            files[i] = get_file(argv[i+1]);
         }
     }
 
     int i = 0;
     for (i; i < size; i++) {
-        char* line;
+        char line[PAGE_SIZE];
         while (fgets(line, PAGE_SIZE, files[i]) != NULL) {
-            //printf("%s", line);
+            printf("%s", line);
         }
     }
 
