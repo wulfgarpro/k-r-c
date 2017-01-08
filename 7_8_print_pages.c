@@ -34,8 +34,9 @@ void page_file(char* file_name, FILE* file) {
     char line[PAGE_SIZE];
     while (fgets(line, PAGE_SIZE, file) != NULL) {
         p.page_count++;
-        printf("Title: %s\n\n%s\nPage #: %d\n", p.title, line, p.page_count);
+        printf("Title: %s\n\n%s\n\nPage #: %d\n", p.title, line, p.page_count);
     }
+    fclose(file);
 }
 
 int main(int argc, char* argv[]) {
