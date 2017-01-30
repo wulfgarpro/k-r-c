@@ -34,5 +34,22 @@ int main(void) {
 
     // expect: 00000001 (1)
     printf("%d\n", setbits(x,p,n,y));
+
+    // example un-named bit flag struct, NOTICE the colon syntax
+    struct {
+        unsigned int val_a : 1; // this is 1 bit
+        unsigned int val_b : 1;
+    } flags;
+
+    // rather than OR'ing a mask, turn on like so
+    flags.val_a = flags.val_b = 1;
+
+    // rather than AND'int a mask, turn off like so
+    flags.val_a = flags.val_b = 0;
+
+    // rather than a mish$-mash, test expression like so
+    if (flags.val_a == 0 && flags.val_b == 0) {
+        // here
+    }
     return 0;
 }
