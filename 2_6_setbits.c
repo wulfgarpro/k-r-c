@@ -36,6 +36,7 @@ int main(void) {
     printf("%d\n", setbits(x,p,n,y));
 
     // example un-named bit flag struct, NOTICE the colon syntax
+    // This is called a Field
     struct {
         unsigned int val_a : 1; // this is 1 bit
         unsigned int val_b : 1;
